@@ -28,4 +28,4 @@ def data_loss(model, alpha, x, t):
 
 
 def total_loss(model, alpha,  initialx, boundaryx, interiorx, initialt, boundaryt, interiort):
-    return 30*pde_loss(model,alpha, interiorx, interiort) + initial_loss(model, alpha, initialx, initialt) +10*boundary_loss(model, alpha, boundaryx, boundaryt)
+    return 30*pde_loss(model,alpha, interiorx, interiort) + data_loss(model, alpha, initialx, initialt) +10*data_loss(model, alpha, boundaryx, boundaryt)
