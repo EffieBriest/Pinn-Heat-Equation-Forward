@@ -555,7 +555,7 @@ This is used for comparison with both the PINN and the finite difference method.
 
 ---
 
-### `finite_difference.py`
+### `finiteDifference.py`
 Implements the explicit finite difference method for the 1D heat equation.
 
 The spatial and temporal grid points are defined as
