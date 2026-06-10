@@ -1,7 +1,7 @@
 # Simple Physics-Informed Neural Network for the 1D Heat Equation in PyTorch
 
 ## Project Summary
-
+(work in process, the inverse direction is not done yet. Also the finite difference method is not complete yet)
 This project implements a simple Physics-Informed Neural Network (PINN) in PyTorch to approximate the solution of the one-dimensional heat equation.  
 The project also includes a classical finite difference method as a numerical baseline.
 
