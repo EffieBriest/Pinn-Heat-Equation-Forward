@@ -1,7 +1,7 @@
 # Simple Physics-Informed Neural Network for the 1D Heat Equation in PyTorch
 
 ## Project Summary
-
+(work in process, the inverse direction is not done yet. Also the finite difference method is not complete yet)
 This project implements a simple Physics-Informed Neural Network (PINN) in PyTorch to approximate the solution of the one-dimensional heat equation.  
 The project also includes a classical finite difference method as a numerical baseline.
 
@@ -102,6 +102,7 @@ The derivatives needed for the PDE residual are computed with PyTorch automatic 
 ## PINN Loss Function
 
 The total PINN loss consists of three parts:
+
 $$
 L_{\text{total}}=
 \lambda_{\text{PDE}} L_{\text{PDE}}
@@ -110,7 +111,9 @@ L_{\text{total}}=
 +
 \lambda_{\text{IC}} L_{\text{IC}}.
 $$
+
 The loss terms enforce different parts of the PDE problem.
+
 
 ---
 
@@ -555,7 +558,7 @@ This is used for comparison with both the PINN and the finite difference method.
 
 ---
 
-### `finite_difference.py`
+### `finiteDifference.py`
 Implements the explicit finite difference method for the 1D heat equation.
 
 The spatial and temporal grid points are defined as
