@@ -20,18 +20,12 @@ def pde_loss(model, alpha, x, t):
 
     return loss
 
-def initial_loss(model, alpha, x, t):
+def data_loss(model, alpha, x, t):
     u_pred = model(x, t)
     u_true = analyticSolutions.u(alpha, x, t)
 
     return torch.mean((u_pred - u_true) ** 2)
 
-def boundary_loss(model, alpha, x,t):
-
-    u_pred = model(x, t)
-    u_true = analyticSolutions.u(alpha,x, t)
-
-    return torch.mean((u_pred - u_true) ** 2)
 
 def total_loss(model, alpha,  initialx, boundaryx, interiorx, initialt, boundaryt, interiort):
     return 30*pde_loss(model,alpha, interiorx, interiort) + initial_loss(model, alpha, initialx, initialt) +10*boundary_loss(model, alpha, boundaryx, boundaryt)

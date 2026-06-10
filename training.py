@@ -62,8 +62,8 @@ for epoch in tqdm(range(epochs)):
 
     # Compute individual losses
     loss_pde = losses.pde_loss(pinn, alpha, x_f, t_f)
-    loss_bc = losses.boundary_loss(pinn, alpha, x_b, t_b)
-    loss_ic = losses.initial_loss(pinn, alpha, x_ic, t_ic)
+    loss_bc = losses.data_loss(pinn, alpha, x_b, t_b)
+    loss_ic = losses.data_loss(pinn, alpha, x_ic, t_ic)
 
     # Weighted total loss
     loss = (
