@@ -9,16 +9,27 @@ def residue(alpha, u, x, t):
     return u_t-alpha*u_xx
 
 def pde_loss(model, alpha, x, t):
-    x.requires_grad_(True)
-    t.requires_grad_(True)
+    """
+    Important:
+    x and t are cloned and detached so that every PDE loss call builds
+    a fresh autograd graph. This avoids backward-through-graph errors
+    when fixed collocation points are reused across epochs.
+    """
+
+    x = x.clone().detach().requires_grad_(True)
+    t = t.clone().detach().requires_grad_(True)
 
     u = model(x, t)
 
-    r = residue(alpha, u, x, t)
+    u_t = torch.autograd.grad(u, t, grad_outputs=torch.ones_like(u), create_graph=True)[0]
 
-    loss = torch.mean(r**2)
+    u_x = torch.autograd.grad(u, x, grad_outputs=torch.ones_like(u), create_graph=True)[0]
 
-    return loss
+    u_xx = torch.autograd.grad(u_x, x, grad_outputs=torch.ones_like(u_x), create_graph=True)[0]
+
+    residual = u_t - alpha * u_xx
+
+    return torch.mean(residual ** 2)
 
 def data_loss(model, alpha, x, t):
     u_pred = model(x, t)
