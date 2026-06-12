@@ -6,7 +6,7 @@ This project implements and compares three approaches for the one-dimensional he
 2. an **inverse Physics-Informed Neural Network**, and
 3. a classical **finite difference baseline**.
 
-The forward PINN learns the solution when the heat coefficient \(\alpha\) is known. The inverse PINN learns both the solution and the unknown coefficient \(\alpha\) from observation data. The finite difference method serves as a classical numerical reference.
+The forward PINN learns the solution when the heat coefficient $\alpha$ is known. The inverse PINN learns both the solution and the unknown coefficient $\alpha$ from observation data. The finite difference method serves as a classical numerical reference.
 
 The project is designed as a clean learning-oriented implementation for understanding how PINNs work on both forward and inverse PDE problems.
 
@@ -59,7 +59,7 @@ The PINN is trained to make this residual small at sampled interior collocation 
 
 ### Goal
 
-In the forward problem, \(\alpha\) is known. The model learns the solution
+In the forward problem, $\alpha$ is known. The model learns the solution
 
 $$u_\theta(x,t) \approx u(x,t).$$
 
@@ -135,7 +135,7 @@ The forward PINN samples three types of training points:
 
 ### Goal
 
-In the inverse problem, \(\alpha\) is unknown. The model learns both
+In the inverse problem, $\alpha$ is unknown. The model learns both
 
 $$u_\theta(x,t)$$
 
