@@ -619,6 +619,12 @@ In the noise-free case, changing the number of observation points had only a sma
 This is why the results for 10, 100, or even 10000 observation points can be very similar. Adding more points does not automatically make the observation loss more important, because the loss is averaged over all observation points. More points mainly improve how well the observation region is sampled.
 
 The situation changes when noise is added. With noisy observations, a small number of points can give a distorted impression of the true solution behaviour. In that case, increasing the number of observation points becomes much more relevant, because the random noise is averaged out over more samples.
+| Data noise | Sensor count | alpha learned | Relative error |
+|---:|---:|---:|---:|
+| 10% | 10 | 1.465745 | 0.465745 |
+| 10% | 100 | 3.729761 | 2.729761 |
+| 10% | 10000 | 0.863107 | 0.136893 |
+| 10% | 1000000 | 0.867541 | 0.132459|
 
 
 ## 12. Possible Improvements
