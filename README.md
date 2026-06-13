@@ -530,7 +530,7 @@ The observation data, collocation points, boundary points, and initial points ar
 
 ## 11. Results
 
-Disclaimer: For the Forward PINN, we only used ADAM as optimizer.
+Note: For the Forward PINN, we only used ADAM as optimizer.
 
 ### Forward PINN Training
 
