@@ -296,7 +296,7 @@ $$
 
 Adam is useful in the early phase because the different loss components can have very different magnitudes. The network may not yet satisfy the boundary condition, the initial condition, the observation data, or the PDE residual well. This makes the optimization problem badly scaled.
 
-Adam handles this by adapting the effective step size for each parameter. For a parameter \(w\), it keeps moving averages of the gradient and the squared gradient:
+Adam handles this by adapting the effective step size for each parameter. For a parameter $w$, it keeps moving averages of the gradient and the squared gradient:
 
 $$
 m_k = \beta_1 m_{k-1} + (1-\beta_1)g_k,
@@ -491,7 +491,7 @@ From the inverse project folder:
 python trainingInversePinn.py
 ```
 
-The script trains the inverse PINN, prints the learned value of \(\alpha\), and plots alpha convergence.
+The script trains the inverse PINN, prints the learned value of $\alpha$, and plots alpha convergence.
 
 ---
 
@@ -562,7 +562,7 @@ All loss components decrease steadily over the course of training. Since the y-a
 
 Around epoch 1000, the loss decreases much more sharply. This marks the transition from the first optimization phase to the refinement phase. In this stage, the already pre-trained network is improved further, leading to significantly smaller residuals.
 
-The final losses are very small, with the total loss reaching approximately \(10^{-5}\). This indicates that the trained PINN satisfies the heat equation, the boundary condition, and the initial condition accurately in the noise-free case.
+The final losses are very small, with the total loss reaching approximately $10^{-5}$. This indicates that the trained PINN satisfies the heat equation, the boundary condition, and the initial condition accurately in the noise-free case.
 ![loss over training inverse pinn](https://hackmd.io/_uploads/rk_nQjYWfg.png)
 
 ### PINN prediction compared to the analytical solution
