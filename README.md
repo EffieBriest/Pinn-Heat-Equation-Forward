@@ -63,7 +63,7 @@ In the forward problem, $\alpha$ is known. The model learns the solution
 
 $$u_\theta(x,t) \approx u(x,t).$$
 
-The network receives two inputs, \((x,t)\), and outputs one scalar value, \(u_\theta(x,t)\).
+The network receives two inputs, $(x,t)$, and outputs one scalar value, $u_\theta(x,t)$.
 
 ### Loss Function
 
